@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boshqaruv paneli</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h5 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #a855f7;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #a855f7;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #d946ef;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5>Kitoblarni boshqarish</h5>
+        <ul>
+            <li><a href="/book/add">Kitob qo'shish</a></li>
+            <li><a href="/book/all">Barcha kitoblarni ko'rish</a></li>
+            <li><a href="/book/:id">Bitta kitobni ko'rish</a></li>
+            <li><a href="/book/update">Kitobni yangilash</a></li>
+            <li><a href="/book/delete/:id">Bitta kitobni o'chirish</a></li>
+        </ul>
+        
+        <h5>Categoriyalarni boshqarish</h5>
+        <ul>
+            <li><a href="/category/add">Kategoriya qo'shish</a></li>
+            <li><a href="/category/all">Barcha kategoriyalarni ko'rish</a></li>
+            <li><a href="/category/:id">Bitta kategoriyani ko'rish</a></li>
+            <li><a href="/category/update">Kategoriyani yangilash</a></li>
+            <li><a href="/category/delete/:id">Kategoriyani o'chirish</a></li>
+        </ul>
+        
+        <h5>Publisherlarni boshqarish</h5>
+        <ul>
+            <li><a href="/publisher/add">Publisher qo'shish</a></li>
+            <li><a href="/publisher/all">Barcha publisherlarni ko'rish</a></li>
+            <li><a href="/publisher/:id">Bitta publisherni ko'rish</a></li>
+            <li><a href="/publisher/update/:id">Publisherni yangilash</a></li>
+            <li><a href="/publisher/delete/:id">Publisherni o'chirish</a></li>
+        </ul>
+    </div>
+</body>
+</html>

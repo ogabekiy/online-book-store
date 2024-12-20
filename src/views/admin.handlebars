@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boshqaruv Paneli</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .menu-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .menu-buttons button {
+            margin: 0 15px;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .menu-buttons button:hover {
+            background-color: #218838;
+            transform: translateY(-5px);
+        }
+
+        /* Sectionlar */
+        .section {
+            display: none;
+            text-align: center;
+            margin-top: 80px; /* Bo'sh joy tugmalardan pastda ko'rinishi uchun */
+            animation: fadeIn 0.5s ease;
+        }
+        .section.active {
+            display: block;
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .section ul li {
+            margin: 10px 0;
+        }
+        .section ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .section ul li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Animatsiya */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="menu-buttons">
+    <button onclick="showSection('orders')">Buyurtmalar</button>
+    <button onclick="showSection('users')">Foydalanuvchilar</button>
+    <button onclick="showSection('books')">Kitoblar</button>
+    <button onclick="showSection('publishers')">Nashriyotlar</button>
+    <button onclick="showSection('categories')">Kategoriyalar</button>
+</div>
+
+<div id="orders" class="section">
+    <h5>Buyurtmalarni boshqarish</h5>
+    <ul>
+        <li><a href="/order/all">Barcha buyurtmalarni kuzatish</a></li>
+        <li><a href="/order/:id">Buyurtmani kuzatish</a></li>
+        <li><a href="/order/update">Buyurtmani tahrirlash</a></li>
+        <li><a href="/order/delete">Buyurtmani bekor qilish</a></li>
+    </ul>
+</div>
+
+<div id="users" class="section">
+    <h5>Foydalanuvchilarni boshqarish</h5>
+    <ul>
+        <li><a href="/user/all">Barcha foydalanuvchilarni ko'rish</a></li>
+        <li><a href="/user/:id">Bitta userni ko'rish</a></li>
+        <li><a href="/user/update">Foydalanuvchini yangilash</a></li>
+        <li><a href="/user/delete/:id">Foydalanuvchini o'chirish</a></li>
+    </ul>
+</div>
+
+<div id="books" class="section">
+    <h5>Kitoblarni boshqarish</h5>
+    <ul>
+        <li><a href="/book/add">Kitob qo'shish</a></li>
+        <li><a href="/book/all">Barcha kitoblarni ko'rish</a></li>
+        <li><a href="/book/:id">Bitta kitobni ko'rish</a></li>
+        <li><a href="/book/update">Kitobni yangilash</a></li>
+        <li><a href="/book/delete/:id">Kitobni o'chirish</a></li>
+    </ul>
+</div>
+
+<div id="publishers" class="section">
+    <h5>Nashriyotlarni boshqarish</h5>
+    <ul>
+        <li><a href="/publisher/add">Nashriyot qo'shish</a></li>
+        <li><a href="/publisher/all">Barcha nashriyotlarni ko'rish</a></li>
+        <li><a href="/publisher/:id">Bitta nashriyotni ko'rish</a></li>
+        <li><a href="/publisher/update/:id">Nashriyotni yangilash</a></li>
+        <li><a href="/publisher/delete/:id">Nashriyotni o'chirish</a></li>
+    </ul>
+</div>
+
+<div id="categories" class="section">
+    <h5>Kategoriyalarni boshqarish</h5>
+    <ul>
+        <li><a href="/category/add">Kategoriya qo'shish</a></li>
+        <li><a href="/category/all">Barcha kategoriyalarni ko'rish</a></li>
+        <li><a href="/category/:id">Bitta kategoriyani ko'rish</a></li>
+        <li><a href="/category/update">Kategoriyani yangilash</a></li>
+        <li><a href="/category/delete/:id">Kategoriyani o'chirish</a></li>
+    </ul>
+</div>
+
+<script>
+    function showSection(sectionId) {
+        // Barcha bo'limlarni yopish
+        var sections = document.querySelectorAll('.section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Bosilgan bo'limni ochish
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

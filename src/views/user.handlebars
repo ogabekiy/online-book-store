@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitoblar va Buyurtmalar</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0); /* Gradient fon */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin: 15px 0;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: translateY(-5px); /* Hover effekti */
+            background-color: #e0f7fa;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #00796b;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px;
+            display: block;
+            border-radius: 10px;
+            transition: color 0.3s ease;
+        }
+
+        ul li a:hover {
+            color: #004d40;
+        }
+
+        /* Responsivlik uchun media query */
+        @media (max-width: 400px) {
+            .container {
+                padding: 20px;
+                width: 100%;
+                margin: 0 20px;
+            }
+
+            ul li a {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kitoblar va Buyurtmalar</h1>
+        <ul>
+            <li><a href="/book/all">Barcha kitoblarni ko'rish</a></li>
+            <li><a href="/book/:id">Bitta kitobni ko'rish</a></li>
+            <li><a href="/order/add">Kitobga buyurtma berish</a></li>
+            <li><a href="/order/all">Buyurtmalarimni kuzatish</a></li>
+            <li><a href="/order/update">Buyurtmani tahrirlash</a></li>
+            <li><a href="/order/delete">Buyurtmani bekor qilish</a></li>
+        </ul>
+    </div>
+</body>
+</html>
